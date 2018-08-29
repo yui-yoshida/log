@@ -1,0 +1,7 @@
+{
+  "name": "log",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3"
+  }
+}

@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :current_user, only: [:new, :edit, :show, :destroy]
+  before_action :loggin_check, only: [:new, :edit, :show, :destroy, :index]
 
 
   def new
@@ -13,6 +13,7 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
     if @blog.save
       redirect_to blogs_path, notice: "Smileを作成しました"
     else
@@ -25,6 +26,7 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
 
   def edit
@@ -45,6 +47,7 @@ class BlogsController < ApplicationController
 
   def confirm
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
     render :new if @blog.invalid?
   end
 
@@ -58,8 +61,8 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
 
-  def current_user
-    if session[:user_id] == nil 
+  def loggin_check
+    if session[:user_id] == nil
       redirect_to new_session_path, notice:"ログインしてください"
     end
   end

@@ -28,13 +28,11 @@
       </ul>
     </header>
 
-
     <div id = "login">
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
 
-    
     </div>
     <%= yield %>
 
@@ -42,6 +40,5 @@
       <p>運営会社Yoppi株式会社</p>
       <p>© 2015-2016 Copyright Yoppi Corp.</p>
     </footer>
-
   </body>
 </html>

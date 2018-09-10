@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   root "tops#top"
   resources :blogs do
     collection do
@@ -9,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :favorites, only: [:create, :destroy]
 end

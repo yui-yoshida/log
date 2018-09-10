@@ -1,6 +1,14 @@
 <div class = "top">
-  <h1>Smile詳細画面</h1>
+  <h1>Smile詳細</h1>
 </div>
 <p>内容: <%= @blog.content %></p>
+
+<% unless @blog.user_id == current_user.id %>
+  <% if @favorite.present? %>
+    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-success' %>
+  <% end %>
+<% end %>
 
 <%= link_to "Smile一覧に戻る", blogs_path, class:"btn btn-primary" %>

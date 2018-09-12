@@ -1,0 +1,2 @@
+class Cotact < ApplicationRecord
+end

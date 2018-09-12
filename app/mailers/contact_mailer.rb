@@ -1,6 +1,7 @@
 class ContactMailer < ApplicationMailer
-  def contact_mail(contact)
-    @contact = contact
-    mail to: "yui.0618.kj8@gmail.com", subject: "お問い合わせの確認メール"
+  def blog_mail(produce)
+    @current_user = current_user
+    @produce = produce
+    mail to: @current_user.email, subject: "Smile作成確認メール"
   end
 end

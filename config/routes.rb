@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :contacts
   resources :cotacts
   root "tops#top"
   resources :blogs do

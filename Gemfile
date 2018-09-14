@@ -28,6 +28,7 @@ group :development, :test do
   gem 'faker'
   gem 'carrierwave'
   gem 'mini_magick'
+
 end
 
 group :development do

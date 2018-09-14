@@ -5,12 +5,14 @@ class ImageUploader < CarrierWave::Uploader::Base
  include CarrierWave::MiniMagick
 
 # 画像の上限を200pxにする
-  
 
-  process resize_to_fit: [800, 800]
+
+  # process resize_to_fit: [100, 100]
+  process resize_to_limit: [50,50]
+  process resize_to_fill: [50, 50, "Center"]
 
   version :thumb do
-    process resize_to_fill: [200,200]
+    process resize_to_limit: [50,50]
   end
 
  # 保存形式をJPGにする

@@ -3,6 +3,12 @@
 
 <p>メールアドレス: <%= @user.email %></p>
 
+<% if @user.image? %>
+  <%= image_tag @user.image.thumb.url %>
+<% else %>
+  <%= image_tag 'noimage.gif' %>
+<% end %>
+
 <h4 class = "favorite_smile_index">お気に入りSmile一覧</h4>
 <ul class = "dots">
   <% @favorites_blogs.each do |favorite_blog| %>

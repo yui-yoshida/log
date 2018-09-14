@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '3.1.11'
-gem 'faker'
+
 
 
 group :development, :test do
@@ -25,6 +25,9 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'dotenv-rails'
+  gem 'faker'
+  gem 'carrierwave'
+  gem 'mini_magick'
 end
 
 group :development do

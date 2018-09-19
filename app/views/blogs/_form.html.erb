@@ -14,7 +14,9 @@
     <%= form.text_field :content %>
 
     <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= image_tag(@blog.image.url) if @blog.image.url %>
+    <%= form.file_field :image , id: :blog_image %>
+    <%= form.hidden_field :image_cache %>
   </div>
   <%= form.submit "登録する", :class => "btn btn-success" %>
 <% end %>

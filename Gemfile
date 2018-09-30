@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '3.1.11'
+gem 'letter_opener_web'
 
 
 
@@ -33,7 +34,6 @@ end
 
 group :development do
   gem 'letter_opener_web'
-
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'

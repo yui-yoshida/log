@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :feeds
-  resources :cotacts
   root "tops#top"
   resources :blogs do
     collection do
